@@ -1,0 +1,24 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @emps.each do |emp| %>
+    <tr>
+      <td><%= check_box_tag 'emp_ids[]',"#{emp.id}",false,:id => "checkbox_#{emp.id}", :class => 'select_identifier' %></td>
+      <td>
+        <%= link_to emp.name ,edit_col_emp_path(emp), :remote => true, :id =>"emp_name"%>
+        <%= text_field_tag emp.name,emp.name,:class =>"hide" %>
+
+      </td>
+      <td><%= emp.age %></td>
+      <td><%= link_to 'Show', emp, :remote => true%></td>
+      <td><%= link_to 'Edit', edit_emp_path(emp), :remote => true%></td>
+      <td><%= link_to 'Destroy', emp, :confirm => 'Are you sure?', :method => :delete ,:remote => true %></td>
+    </tr>
+  <% end %>
+</table>

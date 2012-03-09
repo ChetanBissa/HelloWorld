@@ -1,0 +1,19 @@
+<h1>Listing emps</h1>
+
+<% form_tag '/emps/delete_all',:remote => true,:id => "form" do%>
+  <div id="list">
+    <%= render 'emp_list', :locals => {:emps => @emps} %>
+  </div>
+  <%= submit_tag "Delete All" ,:id => "delete_all"%>
+<%  end %>
+
+<br />
+<div id="show"></div>
+State : <%=text_field_tag 'example'%>
+<br/>
+<br/>
+Date :  <%=text_field_tag 'date'%>
+<br/>
+<%= link_to 'New Emp', new_emp_path , :remote => true%>
+
+<div id="new_form"></div>

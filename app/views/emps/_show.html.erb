@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @emp.name %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%= @emp.age %>
+</p>
+
+
+<%= link_to 'Edit', edit_emp_path(@emp),:remote => true %> |
+<%= link_to 'Back', emps_path,:remote => true %>
